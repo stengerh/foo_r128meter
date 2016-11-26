@@ -10,7 +10,7 @@ bool change_parameters( ebur128_state * state, unsigned sample_rate, unsigned ch
 {
 	int rval = ebur128_change_parameters( state, channels, sample_rate );
 
-	if ( rval != 0 && rval != 2 ) return false;
+    if ( rval != EBUR128_SUCCESS && rval != EBUR128_ERROR_NO_CHANGE ) return false;
 
 	for ( unsigned i = 0; i < channels; i++ )
 	{
@@ -63,7 +63,7 @@ public:
                         sample_rate = chunk.get_sample_rate();
                         channel_count = chunk.get_channel_count();
                         channel_config = chunk.get_channel_config();
-                        m_state = ebur128_init(channel_count, sample_rate, EBUR128_MODE_I);
+                        m_state = ebur128_init(channel_count, sample_rate, EBUR128_MODE_M | EBUR128_MODE_S);
 
                         if ( !m_state ) {
                             throw std::bad_alloc();
@@ -82,9 +82,13 @@ public:
                         }
                     }
                     if ( ebur128_add_frames_float( m_state, chunk.get_data(), chunk.get_sample_count() ) ) break;
-                    double loudness_momentary = ebur128_loudness_momentary(m_state);
-                    //ebur128_gated_loudness_cleanup(m_state, 1);
-                    console::formatter() << "momentary loudness: " << loudness_momentary << " LKFS";
+                    double loudness;
+                    if (!ebur128_loudness_momentary(m_state, &loudness)) {
+                        console::formatter() << "momentary loudness: " << pfc::format_float(loudness, 0, 1) << " LUFS";
+                    }
+                    if (!ebur128_loudness_shortterm(m_state, &loudness)) {
+                        console::formatter() << "short-term loudness: " << pfc::format_float(loudness, 0, 1) << " LUFS";
+                    }
                 } else {
                     console::formatter() << "got no chunk";
                 }

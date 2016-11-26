@@ -21,7 +21,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="ebur128.cpp">
+    <ClCompile Include="ebur128.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
