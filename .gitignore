@@ -3,3 +3,5 @@
 /*.opensdf
 /*.sdf
 /foo_r128meter/Debug
+/Release
+/foo_r128meter/Release

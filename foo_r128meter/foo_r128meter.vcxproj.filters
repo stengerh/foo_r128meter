@@ -38,5 +38,13 @@
     <ClInclude Include="queue.h">
       <Filter>Quelldateien</Filter>
     </ClInclude>
+    <ClInclude Include="foo_r128meter_version.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="foo_r128meter_version.rc">
+      <Filter>Ressourcendateien</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

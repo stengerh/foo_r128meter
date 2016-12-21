@@ -19,3 +19,5 @@
 #include "foobar2000/ATLHelpers/ATLHelpers.h"
 
 #include "ebur128.h"
+
+#include "foo_r128meter_version.h"

@@ -1,6 +1,17 @@
 #include "stdafx.h"
 
-DECLARE_COMPONENT_VERSION("R128 Meter", "0.1.0", "Measures and displays loudness according to EBU-R 128")
+DECLARE_COMPONENT_VERSION(
+    COMPONENT_NAME,
+    COMPONENT_VERSION,
+    "Measures and displays loudness according to EBU-R 128\n"
+    "\n"
+    "Copyright (C) " COMPONENT_COPYRIGHT_YEAR " Holger Stenger\n"
+    "- https://github.com/stengerh/foo_r128meter\n"
+    "\n"
+    "libebur128\n"
+    "Copyright (C) 2011 Jan Kokemüller\n"
+    "- https://github.com/jiixyj/libebur128\n"
+)
 
 class r128meter {
 private:
