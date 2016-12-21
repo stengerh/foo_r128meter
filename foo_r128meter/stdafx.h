@@ -15,5 +15,7 @@
 // TODO: reference additional headers your program requires here
 
 #include "foobar2000/SDK/foobar2000.h"
+#include "foobar2000/helpers/helpers.h"
+#include "foobar2000/ATLHelpers/ATLHelpers.h"
 
 #include "ebur128.h"
