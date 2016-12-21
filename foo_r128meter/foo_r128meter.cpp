@@ -3,7 +3,7 @@
 DECLARE_COMPONENT_VERSION(
     COMPONENT_NAME,
     COMPONENT_VERSION,
-    "Measures and displays loudness according to EBU-R 128\n"
+    "Measures and displays loudness according to EBU R 128\n"
     "\n"
     "Copyright (C) " COMPONENT_COPYRIGHT_YEAR " Holger Stenger\n"
     "- https://github.com/stengerh/foo_r128meter\n"
@@ -161,7 +161,7 @@ public:
     }
 
     static const char * g_get_description() {
-        return "Measures loudness according to EBU-R 128";
+        return "Measures loudness according to EBU R 128";
     }
 
     static ui_element_config::ptr g_get_default_configuration() {
